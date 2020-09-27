@@ -175,10 +175,8 @@ bool operator<(Date& dt1, Date& dt2) {
 
 ostream& operator<<(ostream& stream, stringstream& ss) {
     string tt;
-    while (ss) {
-        ss >> tt;
-        stream << tt;
-    }
+    ss >> tt;
+    stream << tt;
     return stream;
 }
 
@@ -280,6 +278,7 @@ int main() {
             else if (command == "Print") {
                 db.Print();
             }
+            else if (command == "") {}
             else {
                 cout << "Unknown command :" + command << endl;
                 getline(ss, command);
