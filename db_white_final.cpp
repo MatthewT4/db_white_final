@@ -67,7 +67,7 @@ public:
         stringstream ss;
         ss << setfill('0') << setw(4) << year << "-"
            << setfill('0') << setw(2) << month << "-"
-           << setfill('0') << setw(2) << day << "-";
+           << setfill('0') << setw(2) << day;
         return ss;
     }
     int GetYear() const {
@@ -192,14 +192,14 @@ public:
     }
     void DeleteEvent(const Date& date, const string& event) {
         if (DelEvent(VectorEvent, date, event)) {
-            cout << "Deleted successfully";
+            cout << "Deleted successfully" << endl;
         }
         else {
-            cout << "Event not found";
+            cout << "Event not found" << endl;
         }
     }
     void  DeleteDate(const Date& date) {
-        cout << "Deleted " + to_string(DelAllEvent(VectorEvent, date)) + " events";
+        cout << "Deleted " + to_string(DelAllEvent(VectorEvent, date)) + " events" << endl;
     }
 
     void Find(const Date& date) const {
@@ -214,6 +214,7 @@ public:
         sort(VectorEvent.begin(), VectorEvent.end(), [](DateAndEvent& dt1, DateAndEvent& dt2) {
             if (dt1.date == dt2.date) {
                 return dt1.Event < dt2.Event;
+
             }
             return true;
             });
