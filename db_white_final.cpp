@@ -103,11 +103,11 @@ struct DateAndEvent {
 bool DelEvent(vector<DateAndEvent>& Vec, const Date& date, const string& event) {
     int k = 0;
     for (auto i : Vec) {
-        k++;
         if (i.date == date and i.Event == event) {
             Vec.erase(Vec.begin() + k);
             return true;
         }
+        k++;
     }
     return false;
 }
