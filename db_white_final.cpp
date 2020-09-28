@@ -15,7 +15,7 @@ using namespace std;
 bool CheckInvalidDate(istream& stream) {
     string InvalidSymvol = "0123456789";
     char Peek = stream.peek();
-    for (auto a : InvalidSymvol) {
+    for (auto& a : InvalidSymvol) {
         if (a == Peek) {
             return false;
         }
@@ -102,7 +102,7 @@ struct DateAndEvent {
 
 bool DelEvent(vector<DateAndEvent>& Vec, const Date& date, const string& event) {
     int k = 0;
-    for (auto i : Vec) {
+    for (auto& i : Vec) {
         if (i.date == date and i.Event == event) {
             Vec.erase(Vec.begin() + k);
             return true;
@@ -115,7 +115,7 @@ bool DelEvent(vector<DateAndEvent>& Vec, const Date& date, const string& event) 
 
 int DelAllEvent(vector<DateAndEvent>& Vec, const Date& date) {
     int k = 0, QuantiObj = 0;
-    for (auto i : Vec) {
+    for (auto& i : Vec) {
         if (i.date == date) {
             Vec.erase(Vec.begin() + k);
             QuantiObj++;
@@ -128,7 +128,7 @@ int DelAllEvent(vector<DateAndEvent>& Vec, const Date& date) {
 
 void PrintEvents(const vector<DateAndEvent>& Vec, const Date& date) {
     vector<string> VectorString;
-    for (auto item : Vec) {
+    for (auto& item : Vec) {
         if (item.date == date) {
             VectorString.push_back(item.Event);
         }
@@ -141,7 +141,7 @@ void PrintEvents(const vector<DateAndEvent>& Vec, const Date& date) {
 
 
 bool CheckingAdd(const vector<DateAndEvent>& VectorEvent, const Date& date, const string& Event) { // Проверяем, есть ли уже это событие в базе.
-    for (auto i : VectorEvent) {
+    for (auto& i : VectorEvent) {
         if (i.date == date and i.Event == Event) {
             return false; // Если такое событие уже есть в базе - возвращаем false.
         }
