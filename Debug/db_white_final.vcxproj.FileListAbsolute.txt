@@ -1,0 +1,2 @@
+C:\Users\matve\source\repos\db_white_final\db_white_final\Debug\db_white_final.exe
+C:\Users\matve\source\repos\db_white_final\db_white_final\Debug\db_white_final.pdb

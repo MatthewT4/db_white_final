@@ -116,11 +116,11 @@ bool DelEvent(vector<DateAndEvent>& Vec, const Date& date, const string& event) 
 int DelAllEvent(vector<DateAndEvent>& Vec, const Date& date) {
     int k = 0, QuantiObj = 0;
     for (auto i : Vec) {
-        k++;
         if (i.date == date) {
             Vec.erase(Vec.begin() + k);
             QuantiObj++;
         }
+        k++;
     }
     return QuantiObj;
 }
@@ -214,12 +214,11 @@ public:
                 return dt1.Event < dt2.Event;
 
             }
-            return true;
             });
         stringstream ss;
         for (auto& item : VectorEvent) {
             ss = item.date.PrintDate();
-            cout << ss << " " << item.Event;
+            cout << ss << " " << item.Event << endl;
         }
         /*vector<string> VectorAllEvents;
         for (auto& i : VectorEvent) {
